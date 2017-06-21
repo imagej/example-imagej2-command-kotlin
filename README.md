@@ -1,4 +1,4 @@
-This is an example Maven project implementing an ImageJ command.
+This is an example Maven project implementing an ImageJ command in [Kotlin](https://kotlinlang.org).
 
 It is intended as an ideal starting point to develop new ImageJ commands
 in an IDE of your choice. You can even collaborate with developers using a
@@ -58,8 +58,8 @@ Then:
        [here](https://imagej.net/Maven#How_to_find_a_dependency.27s_groupId.2FartifactId.2Fversion_.28GAV.29.3F))
     5. the *developer* information
     6. the *scm* information
-2. Remove the `GaussFiltering.java` file and add your own `.java` files
-   to `src/main/java/<package>/` (if you need supporting files -- like icons
+2. Remove the `GaussFiltering.kt` file and add your own `.kt` files
+   to `src/main/kotlin/<package>/` (if you need supporting files -- like icons
    -- in the resulting `.jar` file, put them into `src/main/resources/`)
 4. Replace the contents of `README.md` with information about your project.
 
