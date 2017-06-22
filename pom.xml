@@ -125,6 +125,17 @@
 				<version>${kotlin.version}</version>
 				<executions>
 					<execution>
+						<id>kapt</id>
+						<goals>
+							<goal>kapt</goal>
+						</goals>
+						<configuration>
+						<sourceDirs>
+							<sourceDir>src/main/kotlin</sourceDir>
+						</sourceDirs>
+						</configuration>
+					</execution>
+					<execution>
 						<id>compile</id>
 						<goals> <goal>compile</goal> </goals>
 						<configuration>
@@ -186,5 +197,50 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<!-- This profile helps Eclipse parse SciJava annotations of imported projects. -->
+		<profile>
+			<id>only-eclipse</id>
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<!--
+						Configure the Eclipse m2e plugin to support needed plugins.
+						-->
+						<plugin>
+							<groupId>org.eclipse.m2e</groupId>
+							<artifactId>lifecycle-mapping</artifactId>
+							<version>1.0.0</version>
+							<configuration>
+								<lifecycleMappingMetadata>
+									<pluginExecutions>
+										<pluginExecution>
+											<pluginExecutionFilter>
+												<groupId>org.jetbrains.kotlin</groupId>
+												<artifactId>kotlin-maven-plugin</artifactId>
+												<versionRange>[1.0,)</versionRange>
+												<goals>
+													<goal>kapt</goal>
+												</goals>
+											</pluginExecutionFilter>
+											<action>
+												<ignore />
+											</action>
+										</pluginExecution>
+									</pluginExecutions>
+								</lifecycleMappingMetadata>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
 
 </project>
