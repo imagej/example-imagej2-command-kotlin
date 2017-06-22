@@ -37,13 +37,13 @@ open class GaussFiltering<T : RealType<T>> : Command {
     //
 
     @Parameter
-    private val currentData: Dataset? = null
+    private var currentData: Dataset? = null
 
     @Parameter
-    private val uiService: UIService? = null
+    private var uiService: UIService? = null
 
     @Parameter
-    private val opService: OpService? = null
+    private var opService: OpService? = null
 
     override fun run() {
         currentData?.let { currentData ->
