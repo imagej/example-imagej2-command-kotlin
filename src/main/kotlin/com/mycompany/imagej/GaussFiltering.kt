@@ -80,6 +80,9 @@ open class GaussFiltering<T : RealType<T>> : Command {
             // create the ImageJ application context with all available services
             val ij = ImageJ()
             ij.ui().showUI()
+			
+            Dummy().hello()
+
 
             // ask the user for a file to open
 //            val file = ij.ui().chooseFile(null, "open")
