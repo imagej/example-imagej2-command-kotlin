@@ -41,8 +41,8 @@ How to use this project as a starting point
 
 Either
 
-* `git clone git://github.com/imagej/example-imagej-command`, or
-* unpack https://github.com/imagej/example-imagej-command/archive/master.zip
+* `git clone git://github.com/imagej/example-imagej-command-kotlin`, or
+* unpack https://github.com/imagej/example-imagej-command-kotlin/archive/master.zip
 
 Then:
 
@@ -63,8 +63,8 @@ Then:
    -- in the resulting `.jar` file, put them into `src/main/resources/`)
 4. Replace the contents of `README.md` with information about your project.
 
-If you cloned the `example-imagej-command` repository, you probably want to
-publish the result in your own repository:
+If you cloned the `example-imagej-command-kotlin` repository, you probably want
+to publish the result in your own repository:
 
 1. Call `git status` to verify .gitignore lists all the files (or file
    patterns) that should be ignored
