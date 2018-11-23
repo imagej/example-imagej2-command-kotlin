@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+	maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+       classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+apply plugin: 'kotlin-kapt'
+
+
+group = 'com.mycompany'
+version = '0.1.0-SNAPSHOT'
+
+description = """Gauss Filtering"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+configurations.all {
+}
+
+repositories {
+     maven { url "http://maven.imagej.net/content/groups/public" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+     mavenCentral()
+}
+
+dependencies {
+    kapt group: 'net.imagej', name: 'imagej', version:'2.0.0-rc-61'
+    compile group: 'net.imagej', name: 'imagej', version:'2.0.0-rc-61'
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8', version:'1.3.10'
+}
