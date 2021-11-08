@@ -65,7 +65,7 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/imagej/example-imagej-command</connection>
+		<connection>scm:git:https://github.com/imagej/example-imagej-command</connection>
 		<developerConnection>scm:git:git@github.com:imagej/example-imagej-command</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/imagej/example-imagej-command</url>
