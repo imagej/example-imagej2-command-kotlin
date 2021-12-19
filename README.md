@@ -39,7 +39,7 @@ developments, it is in the public domain.
 How to use this project as a starting point
 ===========================================
 
-1. Visit [this link](https://github.com/imagej/example-imagej-command-kotlin/generate)
+1. Visit [this link](https://github.com/imagej/example-imagej2-command-kotlin/generate)
    to create a new repository in your space using this one as a template.
 
 2. [Clone your new repository](https://help.github.com/en/articles/cloning-a-repository).
