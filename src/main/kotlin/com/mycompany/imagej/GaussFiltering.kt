@@ -6,6 +6,7 @@
  *     http://creativecommons.org/publicdomain/zero/1.0/
  */
 @file:JvmMultifileClass
+
 package com.mycompany.imagej
 
 import net.imagej.Dataset
@@ -17,6 +18,22 @@ import org.scijava.command.Command
 import org.scijava.plugin.Parameter
 import org.scijava.plugin.Plugin
 import org.scijava.ui.UIService
+
+fun main() {
+    // create the ImageJ application context with all available services
+    val ij = ImageJ()
+
+    val dataset = DatasetOpener.open(ij)
+
+    if (dataset == null)
+        ij.ui().showDialog("Dataset is null!")
+
+    // show the image
+    ij.ui().show(dataset)
+
+    // invoke the plugin
+    ij.command().run(GaussFiltering::class.java, true)
+}
 
 /**
  * This example illustrates how to create an ImageJ [Command] plugin.
@@ -63,41 +80,4 @@ open class GaussFiltering<T : RealType<T>> : Command {
             }
         }
     }
-
-    companion object {
-
-        /**
-         * This main function serves for development purposes.
-         * It allows you to run the plugin immediately out of
-         * your integrated development environment (IDE).
-
-         * @param args whatever, it's ignored
-         * *
-         * @throws Exception
-         */
-        @Throws(Exception::class)
-        @JvmStatic fun main(args: Array<String>) {
-            // create the ImageJ application context with all available services
-            val ij = ImageJ()
-            ij.ui().showUI()
-			
-            Dummy().hello()
-
-
-            // ask the user for a file to open
-//            val file = ij.ui().chooseFile(null, "open")
-//
-//            if (file != null) {
-//                // load the dataset
-//                val dataset = ij.scifio().datasetIO().open(file.path)
-//
-//                // show the image
-//                ij.ui().show(dataset)
-//
-//                // invoke the plugin
-//                ij.command().run<GaussFiltering<*>>(GaussFiltering::class.java, true)
-//            }
-        }
-    }
-
 }
