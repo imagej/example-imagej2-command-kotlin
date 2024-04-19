@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>26.0.0</version>
+		<version>37.0.0</version>
 		<relativePath />
 	</parent>
 
@@ -83,6 +83,7 @@
 		<main-class>com.mycompany.imagej.GaussFiltering</main-class>
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>My Company, Inc.</license.copyrightOwners>
+		<scijava.jvm.version>1.8</scijava.jvm.version>
 	</properties>
 
 	<repositories>
