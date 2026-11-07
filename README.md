@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/imagej/example-imagej2-command-kotlin/actions/workflows/build.yml/badge.svg)](https://github.com/imagej/example-imagej2-command-kotlin/actions/workflows/build.yml)
+
 This is an example Maven project implementing an ImageJ command in [Kotlin](https://kotlinlang.org).
 
 It is intended as an ideal starting point to develop new ImageJ commands
